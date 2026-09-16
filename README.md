@@ -36,12 +36,14 @@ O primeiro passo foi o *Unbricking* e a remoção das limitações do fabricante
 
 #### 1. Instalação do serviço oficial:
 ```bash
-curl -fsSL [https://tailscale.com/install.sh](https://tailscale.com/install.sh) | sh ```
+curl -fsSL [https://tailscale.com/install.sh](https://tailscale.com/install.sh) | sh 
+```
 
 ### 2. Autenticação e vinculação
 Gera a URL de autenticação para vincular o dispositivo à sua conta Tailscale. O token de sessão é salvo e reutilizado de forma autônoma após qualquer reinicialização do sistema.
 ```bash
 sudo tailscale up
+```
 
 ### Mapeamento de DNS Interno (MagicDNS)
 Ativado diretamente no painel administrativo do Tailscale para resolver o nome da máquina (casaosadan) de qualquer dispositivo autorizado na VPN, permitindo acesso simplificado aos serviços locais via navegador ou SSH sem precisar memorizar IPs.
@@ -49,11 +51,13 @@ Ativado diretamente no painel administrativo do Tailscale para resolver o nome d
 Garante que a comunicação entre o servidor e os dispositivos remotos ocorre via rota direta **(direct)**, sem degradação de performance por relay (DERP).
 ```bash
 tailscale status
+```
 
 ### Gestão e persistência do serviço (Systemd Daemon)
 O Tailscale é registrado nativamente como um serviço do sistema para garantia de alta disponibilidade (24/7), garantindo reconexão automática em quedas de energia ou reinicializações:
 ```bash
 sudo systemctl status tailscaled
+```
   
 ### 🔮 Roadmap: O Próximo Nível (Em Desenvolvimento)
 O projeto está em constante evolução. Os próximos grandes passos incluem:
