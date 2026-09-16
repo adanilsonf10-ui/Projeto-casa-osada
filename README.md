@@ -29,7 +29,64 @@ O primeiro passo foi o *Unbricking* e a remoção das limitações do fabricante
 - **Zero Trust:** Acesso mundial sem abrir portas no roteador (*Zero Port Forwarding*), mantendo o IP público e a rede local seguros.
 
 ---
+# 🛠️ Guia de Instalação e Configuração
 
+## 1. Preparação e Arquivos Necessários
+
+### 📥 Downloads e Recursos
+* **Armbian (Atualizado):** [Release Oficial Armbian Community](https://github.com/armbian/community/releases)
+* **Armbian (Maior Compatibilidade):** [Arquivo de Imagens HostHatch RK322x](https://armbian.hosthatch.com/archive/rk322x-box/archive/)
+* **Multitool:** [Download Multitool Image](https://www.mediafire.com/file/2wzb3y4er4zdmld/multitool.img/file)
+* **Balena Etcher:** [Download Balena Etcher v2.1.4](https://github.com/balena-io/etcher/releases/download/v2.1.4/balenaEtcher-2.1.4.Setup.exe)
+
+### 📋 Resumo do Processo
+1. **Preparação:** Baixe as imagens e utilize o **Balena Etcher** para gravar o **Multitool** no cartão de memória MicroSD.
+2. **Configuração da TV Box:** Insira o cartão, formate a memória flash da TV Box (*Erase Flash*) e depois transfira a imagem do Armbian para a pasta `images` no cartão.
+3. **Instalação do Armbian:** Utilize o Multitool para gravar a imagem do Armbian na memória flash (eMMC). Após o boot, configure a senha de `root` e crie o novo usuário.
+4. **Ajustes de Rede e Sistema:** Atualize o sistema com `sudo apt update` e `sudo apt upgrade`, configure o IP estático via `armbian-config` e ajuste o layout do teclado.
+5. **CasaOS e Servidor:** Instale o CasaOS, formate o HD externo conectado à TV Box e compartilhe a pasta de arquivos para acesso na rede local.
+
+---
+
+## 2. Comandos no Terminal (Após o boot do Armbian)
+
+Estes comandos foram utilizados para atualizar e configurar o servidor:
+
+* **Atualizar repositórios:**
+  ```bash
+  sudo apt update
+```
+* **Atualizar pacotes do sistema:**
+```bash
+sudo apt upgrade
+```
+* **Menu de configurações do sistema (rede, teclado, etc):**
+```bash
+sudo armbian-config
+```
+* **Navegar até o diretório de rede:**
+```bash
+cd /etc/net
+```
+* **Listar arquivos do diretório:**
+```bash
+ls
+```
+* **Renomear arquivo de rede (desativar padrão):**
+```bash
+sudo mv 10-xxx.yaml 10-xxx.old
+```
+* **Sair da sessão do terminal:**
+exit
+* **Desligar o sistema com segurança:**
+```bash
+sudo shutdown
+```
+### 3. Instalação do CasaOS
+Com o sistema preparado, execute o comando oficial de instalação do CasaOS:
+```bash
+curl -fsSL [https://get.casaos.io](https://get.casaos.io) | sudo bash
+```
 ## 🛠️ Mão na Massa: Configuração de Rede & Comandos
 
 ### 🌐 Configuração do Tailscale & Redes
