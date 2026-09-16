@@ -77,7 +77,9 @@ ls
 sudo mv 10-xxx.yaml 10-xxx.old
 ```
 * **Sair da sessão do terminal:**
+```besh
 exit
+```
 * **Desligar o sistema com segurança:**
 ```bash
 sudo shutdown
