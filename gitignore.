@@ -1,0 +1,20 @@
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db
+
+# Configurações e Logs do CasaOS/Docker
+*.log
+*.env
+docker-compose.override.yml
+data/
+config/
+
+# Chaves de Segurança e Tokens
+*.key
+*.crt
+*.pem
+tailscale.state
+
+# Arquivos Temporários de Editor
+.vscode/
+.idea/
