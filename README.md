@@ -53,7 +53,7 @@ O primeiro passo foi o *Unbricking* e a remoção das limitações do fabricante
 Estes comandos foram utilizados para atualizar e configurar o servidor:
 
 * **Atualizar repositórios:**
-  ```bash
+```bash
   sudo apt update
 ```
 * **Atualizar pacotes do sistema:**
