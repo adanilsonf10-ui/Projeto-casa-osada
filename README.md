@@ -36,7 +36,7 @@ O primeiro passo foi o *Unbricking* e a remoção das limitações do fabricante
 
 #### 1. Instalação do serviço oficial:
 ```bash
-curl -fsSL [https://tailscale.com/install.sh](https://tailscale.com/install.sh) | sh
+curl -fsSL [https://tailscale.com/install.sh](https://tailscale.com/install.sh) | sh ```
 
 ### 2. Autenticação e vinculação
 Gera a URL de autenticação para vincular o dispositivo à sua conta Tailscale. O token de sessão é salvo e reutilizado de forma autônoma após qualquer reinicialização do sistema.
